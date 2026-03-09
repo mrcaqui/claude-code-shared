@@ -17,6 +17,17 @@
 
     # web-app テンプレートを使用
     .\setup-project.ps1 -Template web-app
+
+.NOTES
+    【使い方】
+    対象プロジェクトのルートディレクトリに cd してから、このスクリプトのパスを指定して実行してください。
+    カレントディレクトリ配下に .claude/ フォルダが作成され、テンプレートがコピーされます。
+
+    cd C:\path\to\your-project
+    & C:\path\to\claude-code-shared\setup-project.ps1
+    & C:\path\to\claude-code-shared\setup-project.ps1 -Template web-app
+
+    既にファイルがある場合は上書き確認プロンプトが表示されます。
 #>
 
 param(
