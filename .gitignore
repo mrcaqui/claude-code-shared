@@ -1,0 +1,10 @@
+# ExecPlan files (project-local, not shared)
+plans/
+
+# Backup files created by setup scripts
+*.bak
+*.bak.*
+
+# Claude Code auto-generated
+.claude/projects/
+.claude/todos/
