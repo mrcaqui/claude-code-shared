@@ -9,5 +9,4 @@ plans/
 *.bak.*
 
 # Claude Code auto-generated
-.claude/projects/
-.claude/todos/
+.claude/*
