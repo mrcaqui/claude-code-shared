@@ -85,7 +85,7 @@ Default to **patch** unless the changes clearly warrant minor or major.
 
 Follow the detected format of the existing file. If no existing format is detected, use this default:
 
-    ## YYYY/MM/DD
+    ## YYYY-MM-DD
 
     #### 1. Short title of the change group (vX.Y.Z)
 
@@ -103,7 +103,14 @@ Follow the detected format of the existing file. If no existing format is detect
 
 Rules:
 
-- Newer dates go at the top, right after the file's main heading.
+- **Date format**: Always use `YYYY-MM-DD` (ISO 8601) as Heading 2. Example: `## 2026-03-13`.
+- **Date ordering**: Newer dates go at the top, right after the file's main heading. Dates must be sorted in reverse chronological order (newest first).
+- **Today's date section**:
+  - Before adding an entry, scan the file for an existing `## {today's date}` heading.
+  - If today's date heading **exists**, add the new numbered item at the **end** of that date's section (i.e., just before the next `## ` heading or end of file), with the next sequential number.
+  - If today's date heading **does not exist**, create a new `## {today's date}` section at the top (right after the file's main heading), starting with `#### 1.`.
+  - **NEVER** append an entry under a different date's heading. Each entry must belong to the date on which it was created.
+- **Numbered items within a date**: Items are numbered in ascending order from top to bottom (1, 2, 3, …). When adding a new item, read existing items under today's date to determine the next number. Do not renumber existing items.
 - Group related changes under a single numbered section.
 - Use separate numbered sections for logically independent changes.
 - Keep descriptions concise but specific enough for someone unfamiliar with the codebase.
