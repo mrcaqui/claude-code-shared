@@ -48,6 +48,8 @@ Run in parallel:
 - `git log --oneline -5` to match the project's commit message style.
 - `git status` to list untracked and modified files.
 
+**Important**: Changes may not be limited to the current conversation session. They can include modifications made in other sessions or manually by the user. Treat `git diff` as the primary source of truth and capture all changes, even those not present in the conversation context.
+
 ### 2. Locate the Progress File
 
 Search for a progress or changelog file. Check these locations in order:
@@ -111,8 +113,8 @@ Rules:
   - If today's date heading **does not exist**, create a new `## {today's date}` section at the top (right after the file's main heading), starting with `#### 1.`.
   - **NEVER** append an entry under a different date's heading. Each entry must belong to the date on which it was created.
 - **Numbered items within a date**: Items are numbered in ascending order from top to bottom (1, 2, 3, …). When adding a new item, read existing items under today's date to determine the next number. Do not renumber existing items.
+- **Splitting changes**: Analyze `git diff` and create separate numbered sections for each logically independent change. When a single diff contains changes with different purposes (e.g., refactoring + new feature + file relocation), document each as its own item. Infer the purpose of each change from the diff content itself, not just from conversation context.
 - Group related changes under a single numbered section.
-- Use separate numbered sections for logically independent changes.
 - Keep descriptions concise but specific enough for someone unfamiliar with the codebase.
 - Include the new version tag in the first section title when version is bumped.
 - Exclude auto-generated files and the progress/version files themselves from the changed files list.
