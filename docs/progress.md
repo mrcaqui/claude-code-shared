@@ -1,5 +1,28 @@
 # 進捗ログ
 
+## 2026-03-22
+
+#### 1. releaseスキルにpush.shカスタムプッシュ対応を追加
+
+**Changes**
+
+- プロジェクトルートに`push.sh`が存在する場合、`git push`の代わりに`bash push.sh`を実行するルールを追加。
+- プロジェクトごとのカスタムプッシュワークフロー（マルチリモート同期など）に対応。
+
+**Changed files**
+
+- global/skills/release/SKILL.md
+
+#### 2. プロジェクトテンプレートのWrite権限パターンを修正
+
+**Changes**
+
+- `settings.local.json`のWrite権限パターンを`Write(*)`から`Write(**)`に修正。
+
+**Changed files**
+
+- project-templates/settings.local.json
+
 ## 2026-03-19
 
 #### 1. releaseスキルのdiff解釈・変更分割ルールを強化

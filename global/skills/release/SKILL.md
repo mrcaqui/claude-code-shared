@@ -135,7 +135,7 @@ Craft a commit message matching the project's existing style. Include the versio
 
     feat: Short summary of changes (vX.Y.Z)
 
-Push to the current branch's remote tracking branch.
+**If a `push.sh` file exists in the project root, run `bash push.sh` instead of `git push`.** This allows projects to customize their push workflow (e.g., multi-remote sync). Otherwise, push to the current branch's remote tracking branch.
 
 ### 8. Verify Clean State
 
