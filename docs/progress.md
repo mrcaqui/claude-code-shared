@@ -1,5 +1,42 @@
 # 進捗ログ
 
+## 2026-04-08
+
+#### 1. README.mdを追加しGit管理対象に変更
+
+**Changes**
+
+- プロジェクトの使い方（新規PC・既存PC・既存プロジェクトでの再適用時の挙動）をまとめたREADME.mdを作成。
+- `.gitignore`からREADME.mdの除外設定を削除し、Git管理対象に変更。
+
+**Changed files**
+
+- README.md
+- .gitignore
+
+#### 2. codex-reviewスキルの一時ファイルパスを変更
+
+**Changes**
+
+- レビュープロンプトの一時ファイルパスを`.claude/tmp_review_prompt.md`から`tmp/codex-review-prompt.md`に変更。
+- 対応する権限設定とクリーンアップコマンドのパスも更新。
+
+**Changed files**
+
+- global/skills/codex-review/SKILL.md
+
+#### 3. プロジェクトテンプレートを更新
+
+**Changes**
+
+- `settings.local.json`に`Write(.claude/**)`権限を追加。
+- Python/uvポリシーを記載した`CLAUDE.md`テンプレートを新規追加。
+
+**Changed files**
+
+- project-templates/settings.local.json
+- project-templates/CLAUDE.md
+
 ## 2026-03-22
 
 #### 1. releaseスキルにpush.shカスタムプッシュ対応を追加

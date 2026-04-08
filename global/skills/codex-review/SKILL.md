@@ -24,8 +24,8 @@ This skill uses the following tools that may require user approval. To run the r
         "allow": [
           "Bash(codex --version:*)",
           "Bash(codex exec:*)",
-          "Bash(rm *tmp_review_prompt*:*)",
-          "Write(.claude/tmp_review_prompt.md)"
+          "Bash(rm *codex-review-prompt*:*)",
+          "Write(tmp/codex-review-prompt.md)"
         ]
       }
     }
@@ -59,13 +59,13 @@ Build the complete review prompt by replacing placeholders in the template:
 3. For iteration 1: Replace `{{RE_REVIEW_CONTEXT}}` with an empty string
 4. For iteration 2+: Replace `{{RE_REVIEW_CONTEXT}}` with the re-review context (see template for format), listing previous issues and the fixes applied
 
-Write the assembled prompt to `.claude/tmp_review_prompt.md` in the project root.
+Write the assembled prompt to `tmp/codex-review-prompt.md` in the project root.
 
 ### Step 3: Execute Codex
 
 Run the following Bash command (timeout: 300000ms):
 
-    codex exec -s read-only -C "<project_root>" "Read the file at .claude/tmp_review_prompt.md and follow the instructions in it exactly. Output your review in the specified format."
+    codex exec -s read-only -C "<project_root>" "Read the file at tmp/codex-review-prompt.md and follow the instructions in it exactly. Output your review in the specified format."
 
 Capture the full stdout output.
 
@@ -122,7 +122,7 @@ Display a final summary:
     ### Remaining Issues (if any)
     [List with explanation of why they were not addressed]
 
-Clean up the temporary file `.claude/tmp_review_prompt.md`.
+Clean up the temporary file `tmp/codex-review-prompt.md`.
 
 ## Error Handling
 
